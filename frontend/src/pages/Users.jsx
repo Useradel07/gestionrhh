@@ -62,7 +62,7 @@ export default function Users() {
               <div className="w-2 h-6 bg-[#0ea5e9] rounded-full transform -rotate-12"></div>
               <div className="w-2 h-6 bg-[#0ea5e9] rounded-full transform rotate-12"></div>
             </div>
-            MaterialM
+            Gestion RH
           </div>
         </div>
         <div className="flex-1 overflow-y-auto py-6 px-4">
@@ -86,11 +86,10 @@ export default function Users() {
       <div className="flex-1 flex flex-col h-full overflow-hidden">
         <header className="h-[70px] bg-white border-b border-gray-100 flex items-center justify-between px-6 flex-shrink-0">
           <div className="flex items-center gap-4 text-gray-400">
-            <Menu className="w-5 h-5 cursor-pointer hover:text-gray-600" />
+            
           </div>
           <div className="flex items-center gap-5 text-gray-400">
-            <Moon className="w-5 h-5 cursor-pointer hover:text-gray-600" />
-            <Bell className="w-5 h-5 cursor-pointer hover:text-gray-600" />
+            
             <Link to="/profile">
               <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#0ea5e9] to-[#00c292] text-white flex items-center justify-center font-bold text-sm shadow-sm cursor-pointer ml-2">P</div>
             </Link>

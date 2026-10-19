@@ -61,7 +61,7 @@ export default function Dashboard() {
               <div className="w-2 h-6 bg-[#0ea5e9] rounded-full transform -rotate-12"></div>
               <div className="w-2 h-6 bg-[#0ea5e9] rounded-full transform rotate-12"></div>
             </div>
-            MaterialM
+            Gestion RH
           </div>
         </div>
         <div className="flex-1 overflow-y-auto py-6 px-4">
@@ -83,12 +83,11 @@ export default function Dashboard() {
       <div className="flex-1 flex flex-col h-full overflow-hidden">
         <header className="h-[70px] bg-white border-b border-gray-100 flex items-center justify-between px-6 flex-shrink-0">
           <div className="flex items-center gap-4 text-gray-400">
-            <Menu className="w-5 h-5 cursor-pointer hover:text-gray-600" />
-            <Search className="w-5 h-5 cursor-pointer hover:text-gray-600" />
+
+
           </div>
           <div className="flex items-center gap-5 text-gray-400">
-            <Moon className="w-5 h-5 cursor-pointer hover:text-gray-600" />
-            <Bell className="w-5 h-5 cursor-pointer hover:text-gray-600" />
+
             <Link to="/profile">
               <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#0ea5e9] to-[#00c292] text-white flex items-center justify-center font-bold text-sm shadow-sm cursor-pointer ml-2">P</div>
             </Link>
@@ -135,13 +134,23 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-white rounded-[20px] p-6 shadow-sm border border-gray-100">
                 <div className="flex justify-between items-center mb-6"><h3 className="text-lg font-bold text-gray-900">Effectifs par département</h3><span className="text-gray-400 cursor-pointer">⋮</span></div>
-                <div className="h-64 w-full">
+                <div className="h-72 w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={stats.employeesByDepartment} margin={{ top: 10, right: 10, bottom: 0, left: -20 }}>
+                    <BarChart data={stats.employeesByDepartment} margin={{ top: 10, right: 10, bottom: 25, left: -20 }}>
                       <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                      <XAxis dataKey="name" stroke="#94a3b8" tickLine={false} axisLine={false} fontSize={12} dy={10} />
+                      <XAxis
+                        dataKey="name"
+                        stroke="#94a3b8"
+                        tickLine={false}
+                        axisLine={false}
+                        fontSize={11}
+                        interval={0}
+                        angle={-25}
+                        textAnchor="end"
+                        height={60}
+                      />
                       <YAxis stroke="#94a3b8" tickLine={false} axisLine={false} fontSize={12} allowDecimals={false} />
-                      <Tooltip cursor={{fill: '#f8fafc'}} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }} />
+                      <Tooltip cursor={{ fill: '#f8fafc' }} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }} />
                       <Bar dataKey="value" fill="#0ea5e9" radius={[4, 4, 4, 4]} barSize={30} />
                     </BarChart>
                   </ResponsiveContainer>
@@ -150,7 +159,7 @@ export default function Dashboard() {
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="bg-white rounded-[20px] p-6 shadow-sm border border-gray-100">
                 <div className="flex justify-between items-center mb-6"><h3 className="text-lg font-bold text-gray-900">Répartition des absences</h3><span className="text-gray-400 cursor-pointer">⋮</span></div>
-                <div className="h-64 w-full relative">
+                <div className="h-72 w-full relative">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                       <Pie data={stats.absencesByType} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={70} outerRadius={90} paddingAngle={5} stroke="none">
